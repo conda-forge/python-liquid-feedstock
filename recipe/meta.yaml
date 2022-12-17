@@ -1,5 +1,5 @@
 {% set name = "python-liquid" %}
-{% set version = "1.5.1" %}
+{% set version = "1.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-liquid-{{ version }}.tar.gz
-  sha256: d67cc4ec558b233faebe40ef236ac53fee79277037bdc3abdff1df954994d505
+  sha256: 630a0065bd003cf6da23f02f24dd9a0e58bc6cbdcd1da9f45a79ac5867c766ab
 
 build:
   noarch: python
