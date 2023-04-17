@@ -1,11 +1,11 @@
-About python-liquid
-===================
+About python-liquid-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-liquid-feedstock/blob/main/LICENSE.txt)
 
 Home: https://jg-rp.github.io/liquid/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-liquid-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python engine for the Liquid template language.
 
