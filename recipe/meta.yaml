@@ -1,13 +1,13 @@
 {% set name = "python-liquid" %}
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz 
-  sha256: 0a6e242cbda9e695682b178af4ee6de70b317d25865bb9935509bccaf20777ee 
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 3887f62070cbb19db0eddffbc029e9695df2126f71b691d707dca2101e7d83cc
 
 build:
   noarch: python
