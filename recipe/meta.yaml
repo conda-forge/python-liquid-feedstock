@@ -1,5 +1,5 @@
 {% set name = "python-liquid" %}
-{% set version = "1.10.2" %}
+{% set version = "1.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 61259d0fe329599c2d9b40f20f42268f740e51fb46d123741d57ad6f080d1426
+  sha256: 8523a8afa20da993520e744d5250514bcaf43fa7cdfb99a7f73ddfbc16f0de07
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - python >=3.7
     - python-dateutil >=2.8.1
     - typing-extensions >=4.2.0
+    - importlib-resources >=5.10.0
   run_constrained:
     - markupsafe >=2.0.0
 
