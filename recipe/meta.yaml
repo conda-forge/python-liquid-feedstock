@@ -1,31 +1,32 @@
 {% set name = "python-liquid" %}
 {% set version = "1.12.1" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 7367e979125859fb4116f360f224a89a52ecb455fb26843c43e4d800b389d325
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling >=1.14
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil >=2.8.1
     - typing-extensions >=4.2.0
     - importlib-resources >=5.10.0
   run_constrained:
-    - markupsafe >=2.0.0
+    - markupsafe >=2.0.0,<3
 
 test:
   imports:
@@ -34,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://jg-rp.github.io/liquid/
