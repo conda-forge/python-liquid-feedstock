@@ -1,5 +1,6 @@
 {% set name = "python-liquid" %}
 {% set version = "1.12.1" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +26,7 @@ requirements:
     - typing-extensions >=4.2.0
     - importlib-resources >=5.10.0
   run_constrained:
-    - markupsafe >=2.0.0
+    - markupsafe >=2.0.0,<3
 
 test:
   imports:
