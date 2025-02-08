@@ -1,5 +1,5 @@
 {% set name = "python-liquid" %}
-{% set version = "1.12.2" %}
+{% set version = "1.13.0" %}
 {% set python_min = "3.7" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 46b5deb2337c1afe91760f2da46b05f17b55482023da441a4a78d096c4271d19
+  sha256: c158fbaad6dd41c49de7cff34e3611bff7211326fb3049322d27673e1d66e166
 
 build:
   noarch: python
