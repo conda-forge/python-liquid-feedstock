@@ -1,6 +1,6 @@
 {% set name = "python-liquid" %}
 {% set version = "2.0.0" %}
-{% set python_min = "3.7" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -23,10 +23,9 @@ requirements:
   run:
     - python >={{ python_min }}
     - python-dateutil >=2.8.1
-    - typing-extensions >=4.2.0
-    - importlib-resources >=5.10.0
-  run_constrained:
-    - markupsafe >=2.0.0,<3
+    - babel >=2
+    - pytz 
+    - markupsafe >=3
 
 test:
   imports:
