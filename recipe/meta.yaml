@@ -26,6 +26,7 @@ requirements:
     - babel >=2
     - pytz
     - markupsafe >=3
+    - importlib-resources >=5.12.0
 
 test:
   imports:
