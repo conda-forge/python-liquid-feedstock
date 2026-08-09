@@ -1,5 +1,5 @@
 {% set name = "python-liquid" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 09841630ad2ecfa75ddf214f33bacaad930d4aadef799309f9e8a84f70e2826f
+  sha256: 884586b7884bb804767fa4f03d3eb4dfaa9979a7f445152aa016402d220dd97b
 
 build:
   noarch: python
@@ -26,6 +26,7 @@ requirements:
     - babel >=2
     - pytz
     - markupsafe >=3
+    - importlib-resources >=5.12.0
 
 test:
   imports:
