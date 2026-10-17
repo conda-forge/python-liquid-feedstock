@@ -1,5 +1,5 @@
 {% set name = "python-liquid" %}
-{% set version = "2.3.4" %}
+{% set version = "2.3.5" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 0af358a253f9f249730deab8e31bca3bd69a9e4b2422f8fb27e25d33393f3b3a
+  sha256: 287bbf14f8356a9e62c6cbbf811baec0787acb848ea46dd79356d067ff70e92f
 
 build:
   noarch: python
