@@ -1,6 +1,6 @@
 {% set name = "python-liquid" %}
-{% set version = "2.3.6" %}
-{% set python_min = "3.9" %}
+{% set version = "3.0.0" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b76c235e0006e2fe069b6fc630a70f797a321a8bc25c02aca6d71e4dacb335f8
+  sha256: 88b4b676e41f6ff6e92106c6ddf006370c6f1bfcc2d1f26f7380ea0a7e9da004
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,9 +24,8 @@ requirements:
     - python >={{ python_min }}
     - python-dateutil >=2.8.1
     - babel >=2
-    - pytz
     - markupsafe >=3
-    - importlib-resources >=5.12.0
+    - tzdata =2026.5
 
 test:
   imports:
