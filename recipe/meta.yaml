@@ -1,48 +1,51 @@
-{% set name = "python-liquid" %}
-{% set version = "3.0.0" %}
-{% set python_min = "3.12" %}
+schema_version: 1
+
+context:
+  version: 3.0.0
+  python_min: 3.12
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: python-liquid
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/python-liquid/python_liquid-${{ version }}.tar.gz
   sha256: 88b4b676e41f6ff6e92106c6ddf006370c6f1bfcc2d1f26f7380ea0a7e9da004
 
 build:
+  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python ${{ python_min }}.*
+    - hatchling
     - pip
-    - python {{ python_min }}
-    - hatchling >=1.14
   run:
-    - python >={{ python_min }}
-    - python-dateutil >=2.8.1
-    - babel >=2
+    - python >=${{ python_min }}
     - markupsafe >=3
-    - tzdata >=2025a
+    - python-dateutil
+    - babel >=2
+    - tzdata
 
-test:
-  imports:
-    - liquid
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - liquid
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
 
 about:
-  home: https://jg-rp.github.io/liquid/
   summary: A Python engine for the Liquid template language.
   license: MIT
-  license_file:
-    - LICENSE
-  dev_url: https://github.com/jg-rp/liquid/
+  license_file: LICENSE
+  homepage: https://jg-rp.github.io/liquid/
+  documentation: https://jg-rp.github.io/liquid/
 
 extra:
   recipe-maintainers:
