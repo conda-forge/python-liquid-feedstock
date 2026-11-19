@@ -33,7 +33,6 @@ tests:
   - python:
       python_version:
         - ${{ python_min }}.*
-        - "*"
       imports:
         - liquid
   - requirements:
