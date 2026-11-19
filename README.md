@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: A Python engine for the Liquid template language.
 
-Development: https://github.com/jg-rp/liquid/
+Documentation: https://jg-rp.github.io/liquid/
 
 Current build status
 ====================
